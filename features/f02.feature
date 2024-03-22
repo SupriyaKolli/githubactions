@@ -1,3 +1,5 @@
+Feature: Login and Logout
+
 @regression
 Scenario Outline: Add and Remove item from the cart
   Given User opens URL "<url>"
