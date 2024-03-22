@@ -15,4 +15,4 @@ Scenario Outline: Add and Remove item from the cart
   Examples:
  
     | url                        | email           | password     |
-    | https://www.saucedemo.com/ | standard_user 1 | secret_sauce |
+    | https://www.saucedemo.com/ | standard_user   | secret_sauce |
