@@ -2,7 +2,7 @@ import { WebDriver, By,until } from 'selenium-webdriver';
 import { AbstractPageObject } from './AbstractPageObject';
 import { driver } from '../support/hook';
 
-export class loginPage extends AbstractPageObject
+export class customersPage extends AbstractPageObject
 {
 private userName = By.id("user-name");
 private passWord=By.id("password");
