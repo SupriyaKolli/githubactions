@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "smoke": "tsc && cucumber-js --require ./dist/step_definitions/ --format ./dist/support/reporter.js:.dummy.txt"
+    "test": "tsc && cucumber-js --require ./dist/step_definitions/ --format ./dist/support/reporter.js:.dummy.txt"
   },
   "keywords": [],
   "author": "",
