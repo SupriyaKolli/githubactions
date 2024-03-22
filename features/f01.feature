@@ -22,7 +22,3 @@ Feature: Login and Add item to cart
 
       | url                        | email         | password     | fname | lname | zcode  |
       | https://www.saucedemo.com/ | standard_user | secret_sauce | test  | test  | 522256 |
-
-
-
-
