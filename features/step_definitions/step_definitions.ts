@@ -7,7 +7,7 @@ let loginpage = new customersPage();
 
         Given('User opens URL {string}', function (url:string)
          {
-            loginpage = new loginPage();
+            loginpage = new customersPage();
             loginpage.open(url);
          });
 
