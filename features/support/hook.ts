@@ -5,13 +5,10 @@ import { Options } from 'selenium-webdriver/chrome';
 export let driver: WebDriver;
 
 BeforeAll(async () => {
+    const options = new Options().headless(); // Create headless options
     driver = await new Builder()
         .forBrowser('chrome')
-        .setChromeOptions(
-            new Options()
-                .headless()
-                // .windowSize({ width: 640, height: 480 })
-        )
+        .setChromeOptions(options) // Set options
         .build();
     return driver.manage().window().maximize();
 });
