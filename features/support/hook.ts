@@ -10,7 +10,7 @@ BeforeAll(async () => {
         .setChromeOptions(
             new Options()
                 // .headless()
-                // .windowSize({ width: 640, height: 480 })
+                .windowSize({ width: 640, height: 480 })
         )
         .build();
     return driver.manage().window().maximize();
