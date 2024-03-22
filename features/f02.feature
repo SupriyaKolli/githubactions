@@ -13,6 +13,6 @@ Scenario Outline: Add and Remove item from the cart
   Then Click on LogOut Button
  
   Examples:
- 
-    | url                        | email           | password     |
-    | https://www.saucedemo.com/ | standard_user   | secret_sauce |
+
+      | url                        | email         | password     |
+      | https://www.saucedemo.com/ | standard_user | secret_sauce |
