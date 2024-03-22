@@ -1,9 +1,9 @@
 import { Given, Then, When } from '@cucumber/cucumber';
-import {loginPage} from '../page_objects/loginPage';
+import {customersPage} from '../page_objects/customersPage';
 
 
 
-let loginpage = new loginPage();
+let loginpage = new customersPage();
 
         Given('User opens URL {string}', function (url:string)
          {
