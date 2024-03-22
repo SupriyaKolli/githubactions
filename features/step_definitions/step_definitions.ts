@@ -1,72 +1,99 @@
-import assert from 'assert';
 import { Given, Then, When } from '@cucumber/cucumber';
-import { CustomersPage } from '../page_objects/customersPage';
+import {loginPage} from '../page_objects/loginPage';
 
-let customersPage: CustomersPage;
-let searchSummaryAtVeryBeginning: string;
 
-Given('the user is on the page',
-    async function () {
-        customersPage = new CustomersPage();
-        customersPage.open();
-        searchSummaryAtVeryBeginning = await customersPage.getSummaryText();
-    });
 
-When('the user enters the value {string} in the text-input',
-    async function (value: string) {
-        await customersPage.setSearchInput(value);
-    });
+let loginpage = new loginPage();
 
-When('the user selects value {string} in the drop-down',
-    async function (value: string) {
-        await customersPage.selectSearchColumnByText(value);
-    });
+        Given('User opens URL {string}', function (url:string)
+         {
+            loginpage = new loginPage();
+            loginpage.open(url);
+         });
 
-When('the user sets case sensitivity switch to {string}',
-    async function (isCaseSensitive: string) {
-        let booleanValue: boolean = isCaseSensitive.toLowerCase() === 'true';
-        await customersPage.setMatchCaseCheckboxField(booleanValue);
-    });
+         Given('User enters email as {string} and password as {string}', async function (string, string2)
+         {
+            await loginpage.username(string);
+            await loginpage.password(string2);
+         });
 
-Then('the user should see the following result summary {string}',
-    async function (expectedSummary: string) {
-        assert.strictEqual(
-            await customersPage.getSummaryText(),
-            expectedSummary);
-    });
+         Given('Click on Login button', async function ()
+         {
+            await loginpage.loginbutton();
+         });
 
-Then('the user should see that the search term is {string}',
-    async function (expectedTerm: string) {
-        let searchTerm: string = await customersPage.getSearchTermText();
-        assert.ok(searchTerm.startsWith(expectedTerm),
-            "Actual should starts with expected."
-            + "\nActual: " + searchTerm
-            + "\nExpected: " + expectedTerm);
-    });
+         Then('Click on Add to cart button', async function ()
+         {
+            await loginpage.addCart();
+            await loginpage.shirtCart();
+         });
 
-When('the user clears filters',
-    async function () {
-        await customersPage.clickClearFiltersButton();
-    });
+         Then('Click on Cart logo', async function ()
+         {
+            await loginpage.cart();
+         });
 
-Then('the user should see that search criteria are cleared',
-    async function () {
-        assert.strictEqual(await customersPage.getSearchInputText(), "");
-    });
+         Then('Click on Checkout button', async function ()
+         {
+           await loginpage.checkout();
+         });
 
-Then('the user should see that the search result summary is as in the very beginning',
-    async function () {
-        assert.strictEqual(await customersPage.getSummaryText(),
-            searchSummaryAtVeryBeginning);
-    });
+         Then('User enters Firstname as {string} and Lastname as {string} and zip as {string}', async function (value:string, value1:string, value2:string)
+         {
+            await loginpage.firstname(value);
+            await loginpage.lastname(value1);
+            await loginpage.pincode(value2);
+         });
 
-Then('the user should see that the search results are as follows: {string}',
-    async function (expectedResults: string) {
-        let resultText: string
-            = await customersPage.getSearchResultsTableText();
-        assert.strictEqual(
-            resultText
-                .replace(/(\s+)/gm, " ")
-                .trim(),
-            expectedResults);
-    }); 
+         Then('Click on Continue button', async function ()
+         {
+            await loginpage.continue();
+         });
+
+         Then('click on Finish button', async function ()
+         {
+            await loginpage.finish();
+         });
+
+         Then('Click on Back Home button', async function ()
+         {
+           await loginpage.backHome();
+         });
+
+         Then('Click on Menu', async function ()
+         {
+            await loginpage.menu();
+         });
+
+         Then('Click on LogOut Button', async function ()
+         {
+            await loginpage.logOut();
+         });
+         Then('Click on Remove button', async function ()
+         {
+            await loginpage.removeButton();
+         });
+
+         Then('Click on Continue shopping button', async function ()
+         {
+            await loginpage.continushop();
+         });
+         Then('check title of the page', async function ()
+         {
+            await loginpage.title();
+         }
+         );
+         Then('User closes the browser', async function()
+         {
+            loginpage.close();
+         });
+         Then ('print Item total amount', async function()
+         {
+           await loginpage.Totalamount();
+         }
+         );
+         Then ('print the amount of each item', async function()
+         {
+            await loginpage.item1();
+            await loginpage.item2();
+         });
