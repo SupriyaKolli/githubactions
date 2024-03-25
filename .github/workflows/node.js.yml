@@ -14,4 +14,4 @@ jobs:
         with:
           node-version: '18.x'
       - run: npm ci
-      - run: npm run smoke
+      - run: npm run regression
