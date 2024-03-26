@@ -1,0 +1,1 @@
+[{"uid":"781f9b6aef741e7e","name":"Add and Remove item from the cart","time":{"start":1711443603814,"stop":1711443604450,"duration":636},"status":"passed","severity":"normal"},{"uid":"571117f05690dddb","name":"Add and purchase the item","time":{"start":1711443601897,"stop":1711443603813,"duration":1916},"status":"passed","severity":"normal"}]
