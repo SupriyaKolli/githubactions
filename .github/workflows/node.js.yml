@@ -15,7 +15,7 @@ jobs:
           node-version: '18.x'
       - run: npm ci
       - run: npm run smoke
-      - name: Allure Report action from marketplace
+      - name: Allure Report generation
         uses: simple-elf/allure-report-action@master
         if: always()
         id: allure-report
