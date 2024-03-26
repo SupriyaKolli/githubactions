@@ -14,5 +14,5 @@ jobs:
         with:
           node-version: '18.x'
       - run: npm ci
-      - run: npm run smoke
+      - run: npm run regression
       - run: npx allure generate allure-results --clean -o allure-report
