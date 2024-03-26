@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: '18.x'
       - run: npm ci
-      - run: npm run regression
+      - run: npm run test
       - name: Allure Report generation
         uses: simple-elf/allure-report-action@master
         if: always()
